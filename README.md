@@ -67,6 +67,7 @@ appid | string | 1 | 当前用户id
 ```
  { status:0,
    data:[
+      //newscount指的是所有待处理的信息，带有信息标记wait:1  管理员查看后 更该数据wait:0
       'news':{'newsCount':'8'},
       'contacts':{'registraters':'1200'},
       'file':{'carsCount':'1220'},
@@ -83,6 +84,7 @@ appid | string | 1 | 当前用户id
 }
 
 ```
+
 ****
 
 ## <a name="titles"> &sect;发现</a>
@@ -103,36 +105,14 @@ appid | string | 1 | 当前用户id
 ### 返回结果
 
 ```
-  { status:0,
-    data:[
-      {'title':'顺丰上市对快递市场的冲击','timestamp':'2017-2-12  14:36',author:'专职作家',content:[
-        {imgurl:'',text:'巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉'},
-        {imgurl:'http://www.gk360che.com/xx.jpg',text:'巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉'},
-        
-       ....
-        ],
-        comments:[
-          {author : "爱美食的美人鱼1573" avatar : "http://pic3.zhimg.com/e9a9215f426b4a0320617b81799fcb72_im.jpg" content : "写得很不错" id : 27889600 likes : 0 reply_to : Object time : 1484991944 times : "2017-01-21 17:45:44"},
-          {author : "爱美食的美人鱼1573" avatar : "http://pic3.zhimg.com/e9a9215f426b4a0320617b81799fcb72_im.jpg" content : "写得很不错" id : 27889600 likes : 0 reply_to : Object time : 1484991944 times : "2017-01-21 17:45:44"},
-          .....
-        ]
-      }，
-       {'title':'顺丰上市对快递市场的冲击','timestamp':'2017-2-12  14:36',author:'专职作家',content:[
-        {imgurl:'',text:'巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉'},
-        {imgurl:'http://www.gk360che.com/xx.jpg',text:'巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉'},
-        
-       ....
-        ],
-        comments:[
-          {author : "爱美食的美人鱼1573" avatar : "http://pic3.zhimg.com/e9a9215f426b4a0320617b81799fcb72_im.jpg" content : "写得很不错" id : 27889600 likes : 0 reply_to : Object time : 1484991944 times : "2017-01-21 17:45:44"},
-          {author : "爱美食的美人鱼1573" avatar : "http://pic3.zhimg.com/e9a9215f426b4a0320617b81799fcb72_im.jpg" content : "写得很不错" id : 27889600 likes : 0 reply_to : Object time : 1484991944 times : "2017-01-21 17:45:44"},
-          .....
-        ]
-      }，
-      .....
-    ]
-}
-
+  {
+    status:0,
+    data:[
+      {name:'贷款申请',advert:'低利率·高额度的车辆贷款服务',bgimg:'宣传图片的地址',codeurl:'链接地址的二维码'},
+      {name:'二手车',advert:'专业的二手卡车交易平台',bgimg:'宣传图片的地址',codeurl:'连接地址的二维码'}
+    ]
+  }
+  
 ```
 ****
 
@@ -607,11 +587,12 @@ carnum | string | 1 | 车辆的车牌号
   {
     status:0,
     data:[
-      {
-        pending：[
-          {appid:'sd8asd68asd',owner:'阿虎',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元'},
-          {appid:'sd8asd68asd',owner:'李强',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元'},
-          {appid:'sd8asd68asd',owner:'吴敏',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元'}
+      {
+                  //待处理，添加待处理缴费标记 wait:1  管理员查看后 更改wait：0        
+        pending：[
+          {appid:'sd8asd68asd',owner:'阿虎',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',wait:1},
+          {appid:'sd8asd68asd',owner:'李强',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',wait:1},
+          {appid:'sd8asd68asd',owner:'吴敏',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',wait:1}
         ],
         processed:[
           {appid:'sd8asd68asd',owner:'阿虎',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元'},
@@ -676,6 +657,373 @@ carnum | string | 1 | 车辆的车牌号
   
   
 ```
+
+****
+
+### <a name="affiliated"> &sect;挂靠费管理</a>
+
+### 请求说明
+
+接口示例:'';
+
+请求方式:'post|get'
+
+### 调用接口示例
+```
+  php || api
+  
+```
+### 参数说明
+
+公司管理员查看不需要参数
+
+### 返回数据示例
+
+```
+  {
+    status:0,
+    data:[
+      //待处理，添加待处理缴费标记 wait:1  管理员查看后 更改wait：0 
+      {openid:'as75d7sa',realname:'王虎',nickname:'虎子',avatar:'头像地址',carnum:'沪D4545',registdate:'2015-12-12',indate:'2016-12-12',mode:'已逾期',wait:1},
+      {openid:'as75d7sa',realname:'王志明',nickname:'老王',avatar:'头像地址',carnum:'沪D0545',registdate:'2016-2-28',indate:'2017-2-28',mode:'待缴费',,wait:1},
+     {openid:'as75d7sa',realname:'王湖',nickname:'老王',avatar:'头像地址',carnum:'沪D9545',registdate:'2017-2-28',indate:'2018-2-28',mode:'已缴费',wait:0},
+      ....
+    ]
+  }
+
+```
+
+### 挂靠费用详情
+
+
+### 请求说明
+
+接口示例:'';
+
+请求方式:'post|get'
+
+### 调用接口示例
+```
+  php || api
+  
+```
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+carnum | string | 1 | 车辆的车牌号
+
+### 返回数据示例
+
+```
+  {
+    status:0,
+    data:{
+      openid:'车主的openid',
+      owner:'黄蓉',
+      avatar:'车主头像地址',
+      carnum:'沪D4545',
+      phonenum:'13895689564',
+      paytype:'挂靠费用',
+      mode:'待缴费',
+      nowpay:'2000元',
+      lastpay:'2000元',
+      lastpaydate:'2016-1-22',
+      indate:'2017-1-21',
+      latestdate:'2017-1-22',
+      otherway:'0',//其他缴费途径 0 =》没有
+    }
+  }
+
+```
+
+### 挂靠费用查看车主详细信息
+
+### 请求说明
+
+接口示例:'与查看车主详情的接口一致';
+
+请求方式:'post|get'
+
+### 调用接口示例
+```
+  php || api
+  
+```
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+carnum | string | 1 | 车辆的车牌号
+
+### 返回结果示例
+
+```
+
+  {
+    status:0,
+    data:[
+      carinfo:{
+            owner:'奥巴马',
+            phonenum:'1388556645',
+            carImg:'https//:hahah.com/xxx.jpg|png',
+            carnum:'沪D0625',
+            mode:'已报废',
+            gkcompany:'上海快鸟'
+          },
+      payment:[
+        {carnum:'沪D0625',type:'挂靠缴费记录',typeimg:'挂靠缴费图片地址',enddate:'2017-10-6',mode:待缴费'},
+        {carnum:'沪D0625',type:'车辆投保记录',typeimg:'保险图片地址',enddate:'2017-10-6',mode:待续保'},
+        {carnum:'沪D0625',type:'车辆还款记录',typeimg:'车辆贷款图片地址',enddate:'2017-10-6',mode:待还款'},
+        {carnum:'沪D0625',type:'行驶证代办缴费记录',typeimg:'行驶证图片地址',enddate:'2017-10-6',mode:待审验'},
+        {carnum:'沪D0625',type:'营运证代办缴费记录',typeimg:'营运证图片地址',enddate:'2017-10-6',mode:已逾期'},
+        {carnum:'沪D0625',type:'二维代办缴费记录',typeimg:'二维图片地址',enddate:'2017-10-6',mode:正常'},
+        {carnum:'沪D0625',type:'GPS缴费记录',typeimg:'gps图片地址',enddate:'2017-10-6',mode:正常'}
+        
+      ],
+      file:{
+        filenun:'DA454d45',
+        cartype:'一汽解放JF9重卡',
+        carnum:'沪D0625',
+        registdate:'2015-6-21',
+        trailernum:'沪DD1600',
+        trailerdate:'2015-7-12',
+        enginenum:'65464644',
+        carframenum:'64646466465',
+        invoicenum:'6465465465',
+        buydate:'2015-4-22',
+        buycode:'46134656467464',
+        gkcompany:'上海快鸟',
+        drivelicense:{
+          type:'货运',
+          registdate:'2014-3-4',
+          indate:'2015-3-4',
+          imgurl:['证件正面照地址','反面照地址']
+        },
+        tradecard:{
+          tradecarnum:'524465',
+          registdate:'2015-1-1',
+          indate:'2016-1-1',
+          imgurl:['证件正面照地址','反面照地址']
+        }
+      },
+      carcredit:{
+        amount:'2000000',
+        allloan:'18期',
+        nowloan:{
+          count:'10期',
+          type:'还款记录',
+          appid:'56sa6d465d车主的appid'
+        },
+        annualrate:'6%',
+        starttime:'2015-4-22',
+        creditHZ:'月还',
+        credittype:'等额本息',
+        bandsman:{
+          name:'杨过',
+          appid:'担保人的appid'
+        },
+        pact:['合同正面照','合同反面照']
+     },
+     insurance:[
+        {year:'2015',data:'2016-4-20',oddnum:'456465465',company:'平安保险',types:['交强险','第三者责任险','车损险'],sum:'12000元'},
+        {year:'2014',data:'2016-4-20',oddnum:'456465465',company:'平安保险',types:['交强险','第三者责任险','车损险'],sum:'12000元'},
+        {year:'2013',data:'2016-4-20',oddnum:'456465465',company:'平安保险',types:['交强险','第三者责任险','车损险'],sum:'12000元'},
+     ],
+     accident:[
+      {year:'2017',pending:'1',accidentdate:'2017-1-14',claimsum:'2000元',actual:'0'},
+      {year:'2017',pending:'1',accidentdate:'2017-1-26',claimsum:'2000元',actual:'2000元'}
+      {year:'2015',pending:'0',accidentdate:'2015-2-14',claimsum:'2000元',actual:'2000元'}
+     ]
+    ]
+  }
+
+```
+### 挂靠费用--查看车主这台车的缴费记录
+
+### 请求说明
+
+接口示例:'只查看当前车牌的缴费记录';
+
+请求方式:'post|get'
+
+### 调用接口示例
+```
+  php || api
+  
+```
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+carnum | string | 1 | 车辆的车牌号
+
+### 返回结果示例
+
+```
+  {
+    status:0,
+    data:[{
+        paytype:'挂靠管理费',
+        paylist:{
+          2016:
+            {mode:'待缴费',amount:'2000元',lateset:'2017-2-28'},//每年此辆车只有一个缴费状态1.待缴费
+            {mode:'已逾期',amount:'2000元',lateset:'2017-2-20'},//2.已逾期
+            {mode:'已缴费',amount:'2000元',paydate:'2017-2-20',lateset:'2018-2-19',timestamp:'2017-2-20 14:00:32'}//3.已缴费
+          ,
+          2015:{mode:'已缴费',amount:'2000元',paydate:'2017-2-20',lateset:'2018-2-19',timestamp:'2017-2-20 14:00:32'}//3.已缴费
+          
+          .....
+        
+        }
+    }]
+  
+  }
+
+```
+
+### 挂靠费用--修改挂靠费用
+
+
+### 请求说明
+
+接口示例:'';
+
+请求方式:'post|get'
+
+### 调用接口示例
+```
+  php || api
+  
+```
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+carnum | string | 1 | 车辆的车牌号
+paycount | string | 1 | 更改后的挂靠费金额
+reason | string | 1 | 更改理由
+
+
+### 返回结果示例
+
+```
+  {
+    status:0,
+    
+    requestmsg:ok
+  }
+
+```
+*****
+
+### <a name="assurance"> &sect; 保险续费管理</a>
+
+### 请求示例
+
+接口:'';
+
+请求方式:'post|get'
+
+### 接口请求示例
+
+```
+php|api
+
+```
+### 参数说明
+
+公司管理员查看不需要参数
+
+### 返回数据示例
+
+```
+  {
+    status:0,
+    data:[
+      //待处理，添加待处理缴费标记 wait:1  管理员查看后 更改wait：0 
+      {openid:'as75d7sa',realname:'王虎',nickname:'虎子',avatar:'头像地址',carnum:'沪D4545',registdate:'2015-12-12',indate:'2016-12-12',mode:'已逾期',wait:1},
+      {openid:'as75d7sa',realname:'王志明',nickname:'老王',avatar:'头像地址',carnum:'沪D0545',registdate:'2016-2-28',indate:'2017-2-28',mode:'待缴费',wait:1},
+      {openid:'as75d7sa',realname:'王志明',nickname:'老王',avatar:'头像地址',carnum:'沪D0545',,registdate:'2016-2-29'indate:'2017-3-1',mode:'已缴费',wait:0},
+      {openid:'as75d7sa',realname:'葫芦娃',nickname:'排队救爷爷',avatar:'头像地址',carnum:'沪D7845',reigistdate:'',indate:'',mode:'待投保',wait:0},
+      ....
+    ]
+  }
+  
+```
+
+### 续保信息详情
+
+### 请求示例
+
+接口:'';
+
+请求方式:'post|get'
+
+### 接口请求示例
+
+```
+php|api
+
+```
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+carnum | string | 1 | 车辆的车牌号
+
+#### 备注
+    缴费结构类似
+    
+### 返回数据示例
+  
+```
+  {
+    status:0,
+    
+  }
+  
+```
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       
       
