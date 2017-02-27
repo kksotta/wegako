@@ -19,6 +19,7 @@
 ## <a name="first"> &sect; 进入小程序</a>
 
 ### 请求说明 
+
 接口地址:"";
 
 ### 参数说明
@@ -48,7 +49,9 @@ encryptedata| string | 1 | 加密过的字符串
 
 ## <a name="home"> &sect; 首页</a>
 ### 请求说明
+
 接口地址："";
+
 调用方式：get/post
 
 ### 参数详情
@@ -85,7 +88,9 @@ appid | string | 1 | 当前用户id
 ## <a name="titles"> &sect;发现</a>
 
 ### 请求说明
+
 接口地址:'';
+
 调用方式:'get|post'
 
 ### 请求示例
@@ -135,8 +140,9 @@ appid | string | 1 | 当前用户id
 
 ### 请求说明
       
-      接口地址:'';
-      请求方试:get|post;
+接口地址:'';
+
+请求方试:get|post;
       
 ### 参数说明
 
@@ -162,8 +168,9 @@ appid | string | 1 | 用户的appid
 
 ### 请求说明
       
-      接口地址:'';
-      请求方试:get|post;
+接口地址:'';
+
+请求方试:get|post;
       
 ### 参数说明
 
@@ -198,7 +205,9 @@ openid | string | 1 | 管理员的openid
 ### <a name="affiche"> &sect; 公告</a>
 
 ### 请求说明
+
 接口：''
+
 方式:'get|post'
 
 ### 没有参数
@@ -231,7 +240,9 @@ openid | string | 1 | 管理员的openid
 ###  管理员发布公告
 
 ### 请求说明
+
 接口：''
+
 方式:'get|post'
 
 ### 参数说明
@@ -255,7 +266,9 @@ openid | string | 1 | 选择接收用户的openid
 ###  管理员发布公告*-*发布范围
 
 ### 请求说明
+
 接口：''
+
 方式:'get|post'
 
 ### 没有参数
@@ -302,7 +315,9 @@ openid | string | 1 | 选择接收用户的openid
 ### <a name="invite"> &sect; 邀请车主</a>
 
 ### 请求说明
+
 接口：‘’;
+
 调用方式:'';
 
 ### 参数说明
@@ -313,15 +328,18 @@ openid | string | 1 | 选择接收用户的openid
 
 ```
 
-{   status:0,
-    data:[{imgurl:'htpps://weixin.com/uercode.png'}]
-}
+  {   status:0,
+      data:[{imgurl:'htpps://weixin.com/uercode.png'}]
+  }
 
 ```
+
+****
 
 ### <a name="contact"> &sect; 车主通讯录</a>
 
 ### 请求说明
+
 接口示例：‘’;
 
 调用方式:'get|post'
@@ -364,29 +382,16 @@ openid | string | 1 | 用户的openid
 
 ```
 
-### <a name="contact"> &sect; 车主通讯录</a>
+### 通讯录车主详情
 
 ### 请求说明
+
 接口示例：‘’;
 
 调用方式:'get|post'
 
 ### 参数说明
-参数名称 | 参数类型 | 是否必选 | 备注
----|---|---|---
-openid | string | 1 | 用户的openid
 
-
-### 返回结果示例
-
-### <a name="filemanage"> &sect;档案管理</a>
-
-### 请求说明
-接口示例：‘’;
-
-调用方式:'get|post'
-
-### 参数说明
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
 openid | string | 1 | 用户的openid
@@ -396,17 +401,281 @@ openid | string | 1 | 用户的openid
 
 ```
 
+  {
+      status:0,
+      data:[
+      
+        userfile:{
+          openid:'as5d76sa',
+          realName:'奥巴马',
+          sex:'1',
+          birthday:'1967-8-26',
+          phoneNum:['13936637888','15947576546'],
+          nickName:'blue_sky',
+          telnumber:'021-5884665|0215884665',
+          address:'上海市闸北区天目西路108号503',
+          company:'上海顺丰快运',
+          companyaddress:'上海市火车站附近',
+          idcard:'341655196708263345',
+        },
+        gkcars:[
+          {
+            carImg:'https//:hahah.com/xxx.jpg|png',
+            carnum:'沪D1625',
+            mode:'正常营运',
+            gkcompany:'上海申通快运'
+          },
+          {
+            carImg:'https//:hahah.com/xxx.jpg|png',
+            carnum:'沪D0625',
+            mode:'已报废',
+            gkcompany:'上海快鸟'
+          }
+          .....
+        ],
+        path:[
+            {'time':'2016.10.1','coord':'上海市虹口区曲阳路336号'},
+            {'time':'2016.11.1','coord':'上海市虹口区曲阳路36号'},
+            {'time':'2016.12.1','coord':'上海市虹口区哈哈l路36号'},
+            {'time':'2017.12.2','coord':'上海市虹口区货车路336号'}
+        ]
+      ]
+  }
+
+```
+
+****
+
+### <a name="filemanage"> &sect;档案管理(公司管理的卡车信息)</a>
+
+### 请求说明
+
+接口示例：‘’;
+
+调用方式:'get|post'
+
+### 参数说明
+
+不需要参数
+
+### 返回结果示例
+
+```
+
 {   status:0,
+    data:[
+          {
+            carImg:'https//:hahah.com/xxx.jpg|png',
+            carnum:'沪D1625',
+            mode:'正常营运',
+            gkcompany:'上海申通快运'
+          },
+          {
+            carImg:'https//:hahah.com/xxx.jpg|png',
+            carnum:'沪D0625',
+            mode:'已报废',
+            gkcompany:'上海快鸟'
+          }
+          .....
+        ],
+}
+
+```
+
+### 车辆信息详情
+
+### 请求说明
+
+接口示例：‘’;
+
+调用方式:'get|post'
+
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+carnum | string | 1 | 车辆的车牌号
+
+
+### 返回结果示例
+
+```
+
+  {
+    status:0,
     data:[
-      
-      
+      carinfo:{
+            owner:'奥巴马',
+            phonenum:'1388556645',
+            carImg:'https//:hahah.com/xxx.jpg|png',
+            carnum:'沪D0625',
+            mode:'已报废',
+            gkcompany:'上海快鸟'
+          },
+      payment:[
+        {carnum:'沪D0625',type:'挂靠缴费记录',typeimg:'挂靠缴费图片地址',enddate:'2017-10-6',mode:待缴费'},
+        {carnum:'沪D0625',type:'车辆投保记录',typeimg:'保险图片地址',enddate:'2017-10-6',mode:待续保'},
+        {carnum:'沪D0625',type:'车辆还款记录',typeimg:'车辆贷款图片地址',enddate:'2017-10-6',mode:待还款'},
+        {carnum:'沪D0625',type:'行驶证代办缴费记录',typeimg:'行驶证图片地址',enddate:'2017-10-6',mode:待审验'},
+        {carnum:'沪D0625',type:'营运证代办缴费记录',typeimg:'营运证图片地址',enddate:'2017-10-6',mode:已逾期'},
+        {carnum:'沪D0625',type:'二维代办缴费记录',typeimg:'二维图片地址',enddate:'2017-10-6',mode:正常'},
+        {carnum:'沪D0625',type:'GPS缴费记录',typeimg:'gps图片地址',enddate:'2017-10-6',mode:正常'}
+        
+      ],
+      file:{
+        filenun:'DA454d45',
+        cartype:'一汽解放JF9重卡',
+        carnum:'沪D0625',
+        registdate:'2015-6-21',
+        trailernum:'沪DD1600',
+        trailerdate:'2015-7-12',
+        enginenum:'65464644',
+        carframenum:'64646466465',
+        invoicenum:'6465465465',
+        buydate:'2015-4-22',
+        buycode:'46134656467464',
+        gkcompany:'上海快鸟',
+        drivelicense:{
+          type:'货运',
+          registdate:'2014-3-4',
+          indate:'2015-3-4',
+          imgurl:['证件正面照地址','反面照地址']
+        },
+        tradecard:{
+          tradecarnum:'524465',
+          registdate:'2015-1-1',
+          indate:'2016-1-1',
+          imgurl:['证件正面照地址','反面照地址']
+        }
+      },
+      carcredit:{
+        amount:'2000000',
+        allloan:'18期',
+        nowloan:{
+          count:'10期',
+          type:'还款记录',
+          appid:'56sa6d465d车主的appid'
+        },
+        annualrate:'6%',
+        starttime:'2015-4-22',
+        creditHZ:'月还',
+        credittype:'等额本息',
+        bandsman:{
+          name:'杨过',
+          appid:'担保人的appid'
+        },
+        pact:['合同正面照','合同反面照']
+     },
+     insurance:[
+        {year:'2015',data:'2016-4-20',oddnum:'456465465',company:'平安保险',types:['交强险','第三者责任险','车损险'],sum:'12000元'},
+        {year:'2014',data:'2016-4-20',oddnum:'456465465',company:'平安保险',types:['交强险','第三者责任险','车损险'],sum:'12000元'},
+        {year:'2013',data:'2016-4-20',oddnum:'456465465',company:'平安保险',types:['交强险','第三者责任险','车损险'],sum:'12000元'},
+     ],
+     accident:[
+      {year:'2017',pending:'1',accidentdate:'2017-1-14',claimsum:'2000元',actual:'0'},
+      {year:'2017',pending:'1',accidentdate:'2017-1-26',claimsum:'2000元',actual:'2000元'}
+      {year:'2015',pending:'0',accidentdate:'2015-2-14',claimsum:'2000元',actual:'2000元'}
+     ]
     ]
+  }
+
+```
+
+****
+
+### <a name="danger"> &sect;出险管理</a>
+
+### 请求说明
+
+接口:'';
+
+请求方式:'post|get'
       
-      
-      
-      
-      
-      
+### 接口调用示例     
+
+```
+
+```
+
+### 参数说明
+
+暂无
+
+### 返回参数示例
+
+```
+  {
+    status:0,
+    data:[
+      {
+        pending：[
+          {appid:'sd8asd68asd',owner:'阿虎',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元'},
+          {appid:'sd8asd68asd',owner:'李强',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元'},
+          {appid:'sd8asd68asd',owner:'吴敏',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元'}
+        ],
+        processed:[
+          {appid:'sd8asd68asd',owner:'阿虎',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元'},
+          {appid:'sd8asd68asd',owner:'李强',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元'},
+          {appid:'sd8asd68asd',owner:'吴敏',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元'}
+        ]
+      }
+    ]
+  }
+
+```
+  
+### 出险详情
+
+#### 请求说明
+
+接口:'';
+
+请求方式:'post|get'
+      
+#### 接口调用示例     
+
+```
+
+```
+
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+carnum | string | 1 | 车辆的车牌号
+
+#### 返回参数示例
+
+```
+  {
+    status:0,
+    data:{
+      mode:'申报中',
+      owner:'阿虎',
+      carnum:'沪D6545',
+      accident:'2017-1-22',
+      amount:'2000元',
+      driver:'吴京',
+      address:'上海市静安区天目西路恒丰路恒通路路口',
+      insurecompany:'平安保险公司',
+      acceptdate:'2017-1-22',
+      //操作员未处理
+      manange:{
+        actual:'',
+        timestamp:'',
+        operator:''
+      }
+      //操作员已处理
+      manange:{
+        actual:'2000元',
+        timestamp:'2017-4-1  14:22',
+        operator:'操作员A'
+      }
+    }
+  }
+  
+  
+```
       
       
       
