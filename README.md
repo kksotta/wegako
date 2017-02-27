@@ -13,6 +13,7 @@
 * [出险管理](#danger)
 * [挂靠费用管理](#affiliated)
 * [续保管理](#assurance)
+
 ****
 
 ## <a name="first"> &sect; 进入小程序</a>
@@ -226,9 +227,180 @@ openid | string | 1 | 管理员的openid
         ]
      }
 ```
-      
+
+###  管理员发布公告
+
+### 请求说明
+接口：''
+方式:'get|post'
+
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 选择接收用户的openid
+openid | string | 1 | 选择接收用户的openid
+.....
+
+### 返回结果示例
+
+```
+  {
+    status:0,
+    requestMsg:ok
+  }
+
+```
+
+###  管理员发布公告*-*发布范围
+
+### 请求说明
+接口：''
+方式:'get|post'
+
+### 没有参数
+
+### 返回结果示例
+
+```
+  {
+      status:0,
+      Data:[
+              { "tag": "A", "textArray": [
+                    {'openid':'d576as5d','letter':'A','name':'阿里','num':'沪b4654','id':'0.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'d576as5d','letter':'A','name':'阿里','num':'沪b4654','id':'0.1','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'d576as5d','letter':'A','name':'阿里','num':'沪b4654','id':'0.2','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'d576as5d','letter':'A','name':'阿里','num':'沪b4654','id':'0.3','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+                ] }, 
+               { "tag": "B", "textArray": [
+                    {'openid':'d576as5d','letter':'B','name':'布欧','num':'沪b4654','id':'1.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'d576as5d','letter':'B','name':'布欧','num':'沪b4654','id':'1.1','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'d576as5d','letter':'B','name':'布欧','num':'沪b4654','id':'1.2','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'d576as5d','letter':'B','name':'布欧','num':'沪b4654','id':'1.3','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+               ] },
+               { "tag": "C", "textArray": [
+                   {'openid':'d576as5d','letter':'C','name':'陈奕迅','num':'沪b4654','id':'2.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+               ] }, 
+               { "tag": "D", "textArray": [
+                   {'openid':'d576as5d','letter':'D','name':'大龙','num':'沪b4654','id':'3.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+               ] }, 
+               { "tag": "E", "textArray": [
+                   {'openid':'d576as5d','letter':'E','name':'Eson','num':'沪b4654','id':'4.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+               ] }, 
+               { "tag": "F", "textArray": [
+                   {'openid':'d576as5d','letter':'F','name':'芳芳','num':'沪b4654','id':'5.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+               ] },
+               .....
+           ]
+  }
+  
+````
+
+
 ****
+
 ### <a name="invite"> &sect; 邀请车主</a>
+
+### 请求说明
+接口：‘’;
+调用方式:'';
+
+### 参数说明
+
+小程序用户端的二维码地址
+
+### 返回结果示例
+
+```
+
+{   status:0,
+    data:[{imgurl:'htpps://weixin.com/uercode.png'}]
+}
+
+```
+
+### <a name="contact"> &sect; 车主通讯录</a>
+
+### 请求说明
+接口示例：‘’;
+
+调用方式:'get|post'
+
+### 参数说明
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 用户的openid
+
+
+### 返回结果示例
+
+```
+{   status:0,
+    Data:[{ "tag": "A", "textArray": [
+                    {'openid':'sad56as75d','letter':'A','name':'阿里','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'sad56as75d','letter':'A','name':'阿里','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'sad56as75d','letter':'A','name':'阿里','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'sad56as75d','letter':'A','name':'阿里','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+                ] }, 
+               { "tag": "B", "textArray": [
+                    {'openid':'sad56as75d','letter':'B','name':'布欧','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'sad56as75d','letter':'B','name':'布欧','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'sad56as75d','letter':'B','name':'布欧','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
+                    {'openid':'sad56as75d','letter':'B','name':'布欧','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+               ] },
+               { "tag": "C", "textArray": [
+                   {'openid':'sad56as75d','letter':'C','name':'陈奕迅','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+               ] }, 
+               { "tag": "D", "textArray": [
+                   {'openid':'sad56as75d','letter':'D','name':'大龙','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+               ] }, 
+               { "tag": "E", "textArray": [
+                   {'openid':'sad56as75d','letter':'E','name':'Eson','num':'沪b4654','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
+               ] }, 
+              .....
+               { "tag": "#", "textArray": [] }
+               ],
+}
+
+```
+
+### <a name="contact"> &sect; 车主通讯录</a>
+
+### 请求说明
+接口示例：‘’;
+
+调用方式:'get|post'
+
+### 参数说明
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 用户的openid
+
+
+### 返回结果示例
+
+### <a name="filemanage"> &sect;档案管理</a>
+
+### 请求说明
+接口示例：‘’;
+
+调用方式:'get|post'
+
+### 参数说明
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 用户的openid
+
+
+### 返回结果示例
+
+```
+
+{   status:0,
+    data:[
+      
+      
+    ]
       
       
       
