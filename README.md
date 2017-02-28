@@ -174,42 +174,160 @@ openid | string | 1 | openid
       //公司
         //newscount指的是所有待处理的信息，带有信息标记wait:1  管理员查看后 更该数据wait:0
         //公司管理员加入
-        {type:'join',right:'超级管理员',openid:'e3243432ed',name:'李香兰',phonenum:'13063363654'},
+        {type:'join',right:'超级管理员',openid:'e3243432ed',name:'李香兰',phonenum:'13063363654',timestamp:'2016-10-2 14:20:26',wait:1},
         //车主加入
-        {type:'join',right:'车主',openid:'35rtyr3ty4e',name:'nickW',phonenum:'13163465545',carnum:['沪D11620','沪D85215'....]},
+        {type:'join',right:'车主',openid:'35rtyr3ty4e',name:'nickW',phonenum:'13163465545',carnum:['沪D11620','沪D85215'....],timestamp:'2016-10-2 14:20:26',wait:1},
         //管理员加入
-        {type:'join',right:'管理员',power:'查看通讯录...',name:'吴彦祖',openid:'4re43e4e4re4e',phonenum:'13664654654'},
-        {type:'join',right:'操作员',power:'查看，打电话，。。。',name:'大娃',openid:'sa6d4as65',phonenum:'13697456465'},
+        {type:'join',right:'管理员',power:'查看通讯录...',name:'吴彦祖',openid:'4re43e4e4re4e',phonenum:'13664654654',timestamp:'2016-10-2 14:20:26',wait:1},
+        {type:'join',right:'操作员',power:'查看，打电话，。。。',name:'大娃',openid:'sa6d4as65',phonenum:'13697456465',timestamp:'2016-10-2 14:20:26',wait:1},
         
-        // 缴费 （挂靠，二维，gps）
-        {type:'payment',paytype:''}
+        // 缴费 （挂靠，二维，gps，保险,营运证,行驶证）
+        {type:'payment',paytype:'挂靠',name:'小娃',openid:'32445234sadas',sum:'2000元',timestamp:'2016-10-2 14:20:26',wait:1},
+        {type:'payment',paytype:'二维',name:'小娃',openid:'32445234sadas',sum:'2000元',timestamp:'2016-10-2 14:20:26',wait:1},
+        {type:'payment',paytype:'gps',name:'小娃',openid:'32445234sadas',sum:'2000元',timestamp:'2016-10-2 14:20:26',wait:1},
+        {type:'payment',paytype:'车险',name:'小娃',openid:'32445234sadas',sum:'2000元',timestamp:'2016-10-2 14:20:26',wait:1},
+        {type:'payment',paytype:'车险',name:'小娃',openid:'32445234sadas',sum:'2000元',timestamp:'2016-10-2 14:20:26',wait:1},
+        
+         //管理员 | 操作员 为车主完成投保
+         {type:'insure',power:'管理员|操作员',manager:'管理员|操作员名字',manager:'13936635465',driver:'司机A',openid:'司机的openid',timestamp:'2016-10-2 14:20:26',wait:1}
         
-      
-      ]
+        //代缴费 （营运证,行驶证）
+        {type:'check',checktype:'营运证',power:'管理员|操作员',manager:'管理员|操作员名字',manager:'13936635465',driver:'司机A',openid:'司机的openid',timestamp:'2016-10-2 14:20:26',wait:1},
+        {type:'check',checktype:'行驶证',power:'管理员|操作员',manager:'管理员|操作员名字',manager:'13936635465',driver:'司机A',openid:'司机的openid',timestamp:'2016-10-2 14:20:26',wait:1}
+        //出险理赔转账
+        {type:'claim',power:'管理员|操作员',manager:'管理员|操作员名字',manager:'13936635465',driver:'司机A',openid:'司机的openid',sum:'200元',address:'上海市静安区恒丰路汉中路路口',timestamp:'2016-10-2 14:20:26',wait:1}
+        //贷款
+        {type:'loan',degree:'第10期',alldegree:'18期',thispay:'2000元',timestamp:'2016-10-2 14:20:26',wait:1}
+      ]
       
       //司机
       'status':0,
       'logintype':'driver',
       'message':[
-          {'tag':'insure','count':8},
-          {'tag':'affiliated','count':8},
-          {'tag':'assurance','count':10},
-          {'tag':'credit','count':9},
-          {'tag':'drivecard','count':15},
-          {'tag':'tradecard','count':14},
-          {'tag':'safeguard','count':4},
-          {'tag':'gps','count':6}
+          {type:'交费助手更新信息payassistant',count:'60'},
+          {type:'理赔款到账提示claims',count:'9'},
+          {type:'公告更新提示papers',count:'9'}
       ]
   
   }
 
 ```
 
-#### 待商讨!!!!
+****
+
+#### 司机的交费助手信息内容
+
+#### 请求说明
+接口:'';
+
+调用方式:'get|post'
+
+#### 参数说明
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 用户的openid
+
+#### 接口调用示例
+
+```
+  php|api
+
+```
+#### 返回参数示例
+
+```
+  {
+    status:0,
+    data:[
+      //到期提示
+      {type:'due',fee:'挂靠',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用到期的车辆）',indate:'到期时间2017-3-5',timestamp:'时间戳2017-3-4 15:56:33',wait:1},
+      {type:'due',fee:'车险',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用到期的车辆）',indate:'到期时间2017-3-5',timestamp:'时间戳2017-3-4 15:56:33',wait:1},
+      {type:'due',fee:'营运证',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用到期的车辆）',indate:'到期时间2017-3-5',timestamp:'时间戳2017-3-4 15:56:33',wait:1},
+      {type:'due',fee:'行驶证',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用到期的车辆）',indate:'到期时间2017-3-5',timestamp:'时间戳2017-3-4 15:56:33',wait:1},
+      {type:'due',fee:'二维',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用到期的车辆）',indate:'到期时间2017-3-5',timestamp:'时间戳2017-3-4 15:56:33',wait:1},
+      {type:'due',fee:'gps',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用到期的车辆）',indate:'到期时间2017-3-5',timestamp:'时间戳2017-3-4 15:56:33',wait:1},
+      {type:'due',fee:'车贷',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用到期的车辆）',indate:'到期时间2017-3-5',timestamp:'时间戳2017-3-4 15:56:33',wait:1},
+      
+      //过期提示
+      {type:'pastdue',fee:'挂靠',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用到期的车辆）',indate:'到期时间2017-3-5',timestamp:'时间戳2017-3-4 15:56:33',wait:1},
+      {type:'pastdue',fee:'挂靠',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用到期的车辆）',indate:'到期时间2017-3-5',timestamp:'时间戳2017-3-4 15:56:33',wait:1},
+      ....相似....
+      
+      //缴费成功提示
+      {type:'success',fee:'挂靠',openid:'车主的openid用于点击查看详情',carnum:'沪D31311（车主费用的车辆）',registdate:'有效开市期2016-3-4',indate:'到期时间2017-3-5',timestamp:'时间戳数据录入的时间2017-3-4 15:56:33',wait:1},
+      ....相似....
+      
+    ]
+  }
+
+```
 
 ****
 
-### <a name="affiche"> &sect; 公告</a>
+#### 司机的理赔小秘书
+
+#### 请求说明
+接口:'';
+
+调用方式:'get|post'
+
+#### 参数说明
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 用户的openid
+
+#### 接口调用示例
+
+```
+  php|api
+
+```
+#### 返回参数示例
+
+```
+  {
+    status:0,
+    data:[
+        {carnum:'沪D45645',sum:'理赔金额2000元',timestamp:'2016-5-24 17:44:41',wait:1},
+        //其他车辆理赔信息格式一样
+      ]
+  }
+
+```
+****
+#### 司机的公告板
+
+#### 请求说明
+接口:'';
+
+调用方式:'get|post'
+
+#### 参数说明
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 用户的openid
+
+#### 接口调用示例
+
+```
+  php|api
+
+```
+#### 返回参数示例
+
+```
+  {
+    status:0,
+    data:[
+        {id:'文章的标记',imgurl:'文章的图片地址',title:'文章的标题',text:'文章的内容',timestamp:'2016-5-24 17:44:41',wait:1//可以用来标记那些人未读消息},
+        //其他信息格式一样
+      ]
+  }
+
+```
+****
+
+### <a name="affiche"> &sect; 公司管理员公告</a>
 
 ### 请求说明
 
@@ -217,30 +335,20 @@ openid | string | 1 | openid
 
 方式:'get|post'
 
-### 没有参数
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 管理员openid判断是哪个公司
 
 ### 返回结果示例
 ```
       {
         status:'0',
         data:[
-           {'title':'顺丰上市对快递市场的冲击','timestamp':'2017-2-12  14:36',author:'专职作家',content:[
-            {imgurl:'',text:'巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉'},
-            {imgurl:'http://www.gk360che.com/xx.jpg',text:'巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉'},
-
-           ....
-            ]
-          }，
-          {'title':'顺丰上市对快递市场的冲击','timestamp':'2017-2-12  14:36',author:'专职作家',content:[
-            {imgurl:'',text:'巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉'},
-            {imgurl:'http://www.gk360che.com/xx.jpg',text:'巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉'},
-
-           ....
-            ]
-          }，
-          
-          .......
-        ]
+           {id:'文章的标记',imgurl:'文章的图片地址',title:'文章的标题',text:'文章的内容',timestamp:'2016-5-24 17:44:41',noread:'未读人数',read:'已读人数'},
+           ....其他的格式一致....
+        ]
      }
 ```
 
@@ -256,15 +364,24 @@ openid | string | 1 | openid
 
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
-openid | string | 1 | 选择接收用户的openid
-openid | string | 1 | 选择接收用户的openid
-.....
+openid | string | 1 | 管理的openid存到对应的公司文章数据库
 
 ### 返回结果示例
 
 ```
   {
-    status:0,
+    //传递参数
+    
+    param:{
+      openid:'管理员id',
+      title:'标题',
+      text:'文章内容'
+    }
+  }
+
+  {
+    // 上传成功的回调
+    status:0,
     requestMsg:ok
   }
 
@@ -274,7 +391,7 @@ openid | string | 1 | 选择接收用户的openid
 
 ****
 
-### <a name="invite"> &sect; 邀请车主</a>
+### <a name="invite"> &sect; 管理员邀请车主</a>
 
 ### 请求说明
 
@@ -296,9 +413,9 @@ openid | string | 1 | 选择接收用户的openid
 
 ```
 
-****
+ ****
 
-### <a name="contact"> &sect; 车主通讯录</a>
+### <a name="contact"> &sect; 管理员通讯录</a>
 
 ### 请求说明
 
@@ -309,9 +426,7 @@ openid | string | 1 | 选择接收用户的openid
 ### 参数说明
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
-openid | string | 1 | 用户的openid
-
-
+openid | string | 1 | 管理员的openid确定哪一家公司
 ### 返回结果示例
 
 ```
@@ -356,7 +471,7 @@ openid | string | 1 | 用户的openid
 
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
-openid | string | 1 | 用户的openid
+openid | string | 1 | 车主的openid
 
 
 ### 返回结果示例
@@ -408,7 +523,7 @@ openid | string | 1 | 用户的openid
 
 ****
 
-### <a name="filemanage"> &sect;档案管理(公司管理的卡车信息)</a>
+### <a name="filemanage"> &sect;车辆档案管理(公司管理的卡车信息)</a>
 
 ### 请求说明
 
@@ -418,7 +533,9 @@ openid | string | 1 | 用户的openid
 
 ### 参数说明
 
-不需要参数
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 管理员的openid确定哪一家公司
 
 ### 返回结果示例
 
@@ -443,6 +560,50 @@ openid | string | 1 | 用户的openid
 }
 
 ```
+
+### 车主查看车辆信息档案
+
+### 请求说明
+
+接口示例：‘’;
+
+调用方式:'get|post'
+
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 车主的openid
+
+### 接口调用示例
+```
+  api|php
+  
+
+```
+### 返回结果示例
+```
+  {   status:0,
+    data:[
+          {
+            carImg:'https//:hahah.com/xxx.jpg|png',
+            carnum:'沪D1625',
+            mode:'正常营运',
+            gkcompany:'上海申通快运'
+          },
+          {
+            carImg:'https//:hahah.com/xxx.jpg|png',
+            carnum:'沪D0625',
+            mode:'已报废',
+            gkcompany:'上海快鸟'
+          }
+          .....
+        ],
+  }
+
+```
+
+****
 
 ### 车辆信息详情
 
@@ -545,7 +706,7 @@ carnum | string | 1 | 车辆的车牌号
 
 ****
 
-### <a name="danger"> &sect;出险管理</a>
+###  <a name="danger"> &sect;出险管理</a>
 
 ### 请求说明
 
@@ -561,7 +722,9 @@ carnum | string | 1 | 车辆的车牌号
 
 ### 参数说明
 
-暂无
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 公司管理员|车主的openid
 
 ### 返回参数示例
 
