@@ -717,14 +717,15 @@ carnum | string | 1 | 车辆的车牌号
 ### 接口调用示例     
 
 ```
-
+   管理员的出险管理。php|api
+  
 ```
 
 ### 参数说明
 
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
-openid | string | 1 | 公司管理员|车主的openid
+openid | string | 1 | 公司管理员openid
 
 ### 返回参数示例
 
@@ -733,24 +734,66 @@ openid | string | 1 | 公司管理员|车主的openid
     status:0,
     data:[
       {
-                  //待处理，添加待处理缴费标记 wait:1  管理员查看后 更改wait：0        
-        pending：[
-          {appid:'sd8asd68asd',owner:'阿虎',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',wait:1},
-          {appid:'sd8asd68asd',owner:'李强',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',wait:1},
-          {appid:'sd8asd68asd',owner:'吴敏',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',wait:1}
-        ],
-        processed:[
-          {appid:'sd8asd68asd',owner:'阿虎',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元'},
-          {appid:'sd8asd68asd',owner:'李强',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元'},
-          {appid:'sd8asd68asd',owner:'吴敏',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元'}
-        ]
+                  //待处理，添加待处理缴费标记 wait:1  管理员查看后 更改wait：0    按时间顺序排    
+       
+          {mode:'申报中',appid:'sd8asd68asd',owner:'阿虎',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',wait:1},
+          {mode:'申报中',appid:'sd8asd68asd',owner:'李强',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',wait:1},
+          {mode:'申报中',appid:'sd8asd68asd',owner:'吴敏',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',wait:1}
+          ......
+        
+        
+          {mode:'已赔付',appid:'sd8asd68asd',owner:'阿虎',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元',wait:0},
+          {mode:'已赔付',appid:'sd8asd68asd',owner:'李强',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元',wait:0},
+          {mode:'已赔付',appid:'sd8asd68asd',owner:'吴敏',carnum:'沪D0625',accident:'2017-1-20',countsum:'2000元',actual:'2000元',wait:1}
+          ......
+        
       }
     ]
   }
 
 ```
-  
-### 出险详情
+
+
+****
+
+###  车主查看所属车辆的出险信息
+
+### 请求说明
+
+接口:'';
+
+请求方式:'post|get'
+      
+### 接口调用示例     
+
+```
+   管理员的出险管理。php|api
+  
+```
+
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 公司管理员openid
+
+### 返回参数示例
+```
+  {
+    status:0,
+    data:[
+     {mode:'申报中',carnum:'沪S74185',time:'2016-4-20',sum:'2300元',timestamp:'2016-12-1 8:54:5',wait:1},
+     {mode:'已赔付',carnum:'沪S74185',time:'2016-4-20',sum:'2300元',timestamp:'2016-12-1 8:54:5',wait:1},
+     .....
+    ]
+  }
+
+```
+
+
+****
+
+### 管理员|车主查看出险详情
 
 #### 请求说明
 
@@ -785,13 +828,8 @@ carnum | string | 1 | 车辆的车牌号
       address:'上海市静安区天目西路恒丰路恒通路路口',
       insurecompany:'平安保险公司',
       acceptdate:'2017-1-22',
-      //操作员未处理
-      manange:{
-        actual:'',
-        timestamp:'',
-        operator:''
-      }
-      //操作员已处理
+      
+      //操作员已处理赔付 申报中没有以下参数 车主详情没有
       manange:{
         actual:'2000元',
         timestamp:'2017-4-1  14:22',
@@ -802,6 +840,45 @@ carnum | string | 1 | 车辆的车牌号
   
   
 ```
+
+****
+### 车主修改申报信息
+
+#### 请求说明
+
+接口:'';
+
+请求方式:'post|get'
+      
+#### 接口调用示例     
+
+```
+车主申报接口
+
+```
+
+### 参数说明
+
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+carnum | string | 1 | 修改前车辆的车牌号
+
+#### 上传参数示例
+
+```
+   {
+      owner:'阿虎',
+      carnum:'沪D6545',
+      accident:'2017-1-22',
+      amount:'2000元',
+      driver:'吴京',
+      address:'上海市静安区天目西路恒丰路恒通路路口'
+  }
+  
+  
+```
+
+### 返回参数示例 
 
 ****
 
@@ -820,7 +897,9 @@ carnum | string | 1 | 车辆的车牌号
 ```
 ### 参数说明
 
-公司管理员查看不需要参数
+参数名称 | 参数类型 | 是否必选 | 备注
+---|---|---|---
+openid | string | 1 | 公司管理员openid
 
 ### 返回数据示例
 
