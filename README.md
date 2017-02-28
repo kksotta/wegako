@@ -127,7 +127,7 @@ encryptedata| string | 1 | 加密过的字符串
 
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
-appid | string | 1 | 用户的appid
+appid | string | 1 | 用户|管理员的appid
      
 ### 返回结果
 
@@ -135,7 +135,11 @@ appid | string | 1 | 用户的appid
 
   {
     status:0,
-    data:{userName:'杨过',carNum:'沪D5540',phoneNum:'13063569465'}
+    //管理员
+    data:{name:'管理员的真实姓名',avatar:'管理员头像地址',phonenum:'管理员手机号',company:'管理员公司'}
+    
+    //司机
+    data:{name:'杨过',carnum:'沪D5540',phonenum:'13063569465',avatar:'用户头像地址'}
   
   }
 
@@ -155,23 +159,47 @@ appid | string | 1 | 用户的appid
 
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
-openid | string | 1 | 管理员的openid
+openid | string | 1 | openid
      
 ### 返回结果
 
 ```
 
   {
-    status:0,
-    data:[
-      {openid:'sususasd5a6s7das',type:'加入',timestamp:"2016-12-22 14:22",name:'用户A',persontype:'用户',phoneNum:'13854655585',carNum:'沪A45454'},
-      {openid:'sa5d7a6s5d7asd57',type:'出险理赔申报',timestamp:'2017-1-22  14:56',name:'用户B',persontype:'用户',phoneNum:'13046155555',carNum:'沪D444'},
-       {openid:'sa5d7a6s5d7asd57',type:'缴纳挂靠费',timestamp:'2017-1-22  14:56',name:'用户c',persontype:'用户',phoneNum:'13046155555',carNum:'沪D444',cash:'2000'},
-        {openid:'sa5d7a6s5d7asd57',type:'转账理赔款',timestamp:'2017-1-22  14:56',name:'操作员A',persontype:'操作员',phoneNum:'13046155555',carNum:'沪D444',cash:'2000'},
-    
-    
-    
-    ]
+    //公司管理员
+    'status':0,
+    logintype:'manager',
+     //数据表更新的信息 
+    message:[
+      //公司
+        //newscount指的是所有待处理的信息，带有信息标记wait:1  管理员查看后 更该数据wait:0
+        //公司管理员加入
+        {type:'join',right:'超级管理员',openid:'e3243432ed',name:'李香兰',phonenum:'13063363654'},
+        //车主加入
+        {type:'join',right:'车主',openid:'35rtyr3ty4e',name:'nickW',phonenum:'13163465545',carnum:['沪D11620','沪D85215'....]},
+        //管理员加入
+        {type:'join',right:'管理员',power:'查看通讯录...',name:'吴彦祖',openid:'4re43e4e4re4e',phonenum:'13664654654'},
+        {type:'join',right:'操作员',power:'查看，打电话，。。。',name:'大娃',openid:'sa6d4as65',phonenum:'13697456465'},
+        
+        // 缴费 （挂靠，二维，gps）
+        {type:'payment',paytype:''}
+        
+      
+      ]
+      
+      //司机
+      'status':0,
+      'logintype':'driver',
+      'message':[
+          {'tag':'insure','count':8},
+          {'tag':'affiliated','count':8},
+          {'tag':'assurance','count':10},
+          {'tag':'credit','count':9},
+          {'tag':'drivecard','count':15},
+          {'tag':'tradecard','count':14},
+          {'tag':'safeguard','count':4},
+          {'tag':'gps','count':6}
+      ]
   
   }
 
