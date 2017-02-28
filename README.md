@@ -1,8 +1,7 @@
 #公司端数据接口文档
 ##目录
 ### &sect; [类别](#category)
-* [进入小程序](#first)
-* [首页](#home)
+* [进入小程序首页](#first)
 * [发现](#titles)
 * [设置](#set)
 * [信息页](#message)
@@ -16,7 +15,7 @@
 
 ****
 
-## <a name="first"> &sect; 进入小程序</a>
+## <a name="first"> &sect; 进入小程序首页</a>
 
 ### 请求说明 
 
@@ -40,50 +39,50 @@ encryptedata| string | 1 | 加密过的字符串
 ```
 {
   status:0,
-  appid:jasdg34sjgdajs34asgdaj+
-}
-
-```
-
-****
-
-## <a name="home"> &sect; 首页</a>
-### 请求说明
-
-接口地址："";
-
-调用方式：get/post
-
-### 参数详情
-参数名称 | 参数类型 | 是否必选 | 备注
----|---|---|---
-appid | string | 1 | 当前用户id
-
-### 请求示例
-```
-  https://www.服务器.com/home.php?appid=wegjwgsjadjgigzxc54sdasd46
-```
-### 返回结果
-```
- { status:0,
-   data:[
-      //newscount指的是所有待处理的信息，带有信息标记wait:1  管理员查看后 更该数据wait:0
-      'news':{'newsCount':'8'},
-      'contacts':{'registraters':'1200'},
-      'file':{'carsCount':'1220'},
-      'insure':{'newsCount':'8'},
-      'affiliated':{'newsCount':'8'},
-      'assurance':{'newsCount':'8'},
-      'carCredit':{'newsCount':'8'},
-      'driveCard':{'newsCount':'8'},
-      'tradeCard':{'newsCount':'8'},
-      'safeGuard':{'newsCount':'8'},
-      'gps':{'newsCount':'8'},
-      'finance':{'newsCount':'8'}
+  data:{
+    // 新用户 未注册 
+    'status':1,
+    
+    
+    //公司管理员
+    'status':0,
+    logintype:'manager',
+     //数据表更新的信息 
+    message:[
+      //公司
+          //newscount指的是所有待处理的信息，带有信息标记wait:1  管理员查看后 更该数据wait:0
+        {'tag':'message','count':30},
+        {'tag':'contact','drivers':'1260人'},
+        {'tag':'carfile','count':'2500辆'},
+        {'tag':'insure','count':8},
+        {'tag':'affiliated','count':8},
+        {'tag':'assurance','count':10},
+        {'tag':'credit','count':9},
+        {'tag':'drivecard','count':15},
+        {'tag':'tradecard','count':14},
+        {'tag':'safeguard','count':4},
+        {'tag':'gps','count':6}
+      
       ]
+      
+      //司机
+      'status':0,
+      'logintype':'driver',
+      'message':[
+          {'tag':'insure','count':8},
+          {'tag':'affiliated','count':8},
+          {'tag':'assurance','count':10},
+          {'tag':'credit','count':9},
+          {'tag':'drivecard','count':15},
+          {'tag':'tradecard','count':14},
+          {'tag':'safeguard','count':4},
+          {'tag':'gps','count':6}
+      ]
+    }
 }
 
 ```
+
 
 ****
 
@@ -243,51 +242,6 @@ openid | string | 1 | 选择接收用户的openid
 
 ```
 
-###  管理员发布公告*-*发布范围
-
-### 请求说明
-
-接口：''
-
-方式:'get|post'
-
-### 没有参数
-
-### 返回结果示例
-
-```
-  {
-      status:0,
-      Data:[
-              { "tag": "A", "textArray": [
-                    {'openid':'d576as5d','letter':'A','name':'阿里','num':'沪b4654','id':'0.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
-                    {'openid':'d576as5d','letter':'A','name':'阿里','num':'沪b4654','id':'0.1','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
-                    {'openid':'d576as5d','letter':'A','name':'阿里','num':'沪b4654','id':'0.2','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
-                    {'openid':'d576as5d','letter':'A','name':'阿里','num':'沪b4654','id':'0.3','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
-                ] }, 
-               { "tag": "B", "textArray": [
-                    {'openid':'d576as5d','letter':'B','name':'布欧','num':'沪b4654','id':'1.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
-                    {'openid':'d576as5d','letter':'B','name':'布欧','num':'沪b4654','id':'1.1','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
-                    {'openid':'d576as5d','letter':'B','name':'布欧','num':'沪b4654','id':'1.2','avator':'http://soulferry.xyz/DEMO/avator.jpg'},
-                    {'openid':'d576as5d','letter':'B','name':'布欧','num':'沪b4654','id':'1.3','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
-               ] },
-               { "tag": "C", "textArray": [
-                   {'openid':'d576as5d','letter':'C','name':'陈奕迅','num':'沪b4654','id':'2.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
-               ] }, 
-               { "tag": "D", "textArray": [
-                   {'openid':'d576as5d','letter':'D','name':'大龙','num':'沪b4654','id':'3.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
-               ] }, 
-               { "tag": "E", "textArray": [
-                   {'openid':'d576as5d','letter':'E','name':'Eson','num':'沪b4654','id':'4.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
-               ] }, 
-               { "tag": "F", "textArray": [
-                   {'openid':'d576as5d','letter':'F','name':'芳芳','num':'沪b4654','id':'5.0','avator':'http://soulferry.xyz/DEMO/avator.jpg'}
-               ] },
-               .....
-           ]
-  }
-  
-````
 
 
 ****
@@ -980,7 +934,9 @@ carnum | string | 1 | 车辆的车牌号
 ```
   {
     status:0,
-    
+    data:[
+      {}
+    ]
   }
   
 ```
