@@ -1086,43 +1086,7 @@ companyid |string | 1 | 公司的id
 
 ```
 
-****
 
-### 车主查看挂靠费详请
-
-### 请求说明
-
-接口示例:'';
-
-请求方式:'post|get'
-
-### 调用接口示例
-```
-  php || api
-  
-```
-### 参数说明
-
-参数名称 | 参数类型 | 是否必选 | 备注
----|---|---|---
-companyid | string | 1 | 公司的id
-driverid | string | 1 | 车主openid
-
-### 返回数据示例
-
-```
-  {
-    status:0,
-    data:[
-      //待处理，添加待处理缴费标记 wait:1  管理员查看后 更改wait：0 
-      {openid:'as75d7sa',owner:'王虎',nickname:'虎子',avatar:'头像地址',carnum:'沪D4545',registdate:'2015-12-12',indate:'2016-12-12',mode:'已逾期',timestamp:'2016-15-11 24:00:12',wait:1},
-      {openid:'as75d7sa',owner:'王志明',nickname:'老王',avatar:'头像地址',carnum:'沪D0545',registdate:'2016-2-28',indate:'2017-2-28',mode:'待缴费',timestamp:'2016-15-11 24:00:12',wait:1},
-     {openid:'as75d7sa',owner:'王湖',nickname:'老王',avatar:'头像地址',carnum:'沪D9545',registdate:'2017-2-28',indate:'2018-2-28',mode:'已缴费',timestamp:'2016-15-11 24:00:12',wait:0},
-      ....
-    ]
-  }
-
-```
 
 ****
 
@@ -1190,7 +1154,7 @@ carnum | string | 1 | 车辆的车牌号
 
 
 
-### 挂靠费用查看车主详细信息
+### 挂靠费用查看车辆详细信息
 
 ### 请求说明
 
@@ -1207,88 +1171,54 @@ carnum | string | 1 | 车辆的车牌号
 
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
-carnum | string | 1 | 车辆的车牌号
+companyid |string | 1 |公司的id
+driverid | string | 1 | 车主id 
+
 
 ### 返回结果示例
 
 ```
 
   {
-    status:0,
-    data:[
-      carinfo:{
-            owner:'奥巴马',
-            phonenum:'1388556645',
+      status:0,
+      data:[
+      
+        userfile:{
+          openid:'as5d76sa',
+          realName:'奥巴马',
+          sex:'1',
+          birthday:'1967-8-26',
+          phoneNum:['13936637888','15947576546'],
+          nickName:'blue_sky',
+          telnumber:'021-5884665|0215884665',
+          address:'上海市闸北区天目西路108号503',
+          company:'上海顺丰快运',
+          companyaddress:'上海市火车站附近',
+          idcard:'341655196708263345',
+        },
+        gkcars:[
+          {
+            carImg:'https//:hahah.com/xxx.jpg|png',
+            carnum:'沪D1625',
+            mode:'正常营运',
+            gkcompany:'上海申通快运'
+          },
+          {
             carImg:'https//:hahah.com/xxx.jpg|png',
             carnum:'沪D0625',
             mode:'已报废',
             gkcompany:'上海快鸟'
-          },
-      payment:[
-        {carnum:'沪D0625',type:'挂靠缴费记录',typeimg:'挂靠缴费图片地址',enddate:'2017-10-6',mode:待缴费'},
-        {carnum:'沪D0625',type:'车辆投保记录',typeimg:'保险图片地址',enddate:'2017-10-6',mode:待续保'},
-        {carnum:'沪D0625',type:'车辆还款记录',typeimg:'车辆贷款图片地址',enddate:'2017-10-6',mode:待还款'},
-        {carnum:'沪D0625',type:'行驶证代办缴费记录',typeimg:'行驶证图片地址',enddate:'2017-10-6',mode:待审验'},
-        {carnum:'沪D0625',type:'营运证代办缴费记录',typeimg:'营运证图片地址',enddate:'2017-10-6',mode:已逾期'},
-        {carnum:'沪D0625',type:'二维代办缴费记录',typeimg:'二维图片地址',enddate:'2017-10-6',mode:正常'},
-        {carnum:'沪D0625',type:'GPS缴费记录',typeimg:'gps图片地址',enddate:'2017-10-6',mode:正常'}
-        
-      ],
-      file:{
-        filenun:'DA454d45',
-        cartype:'一汽解放JF9重卡',
-        carnum:'沪D0625',
-        registdate:'2015-6-21',
-        trailernum:'沪DD1600',
-        trailerdate:'2015-7-12',
-        enginenum:'65464644',
-        carframenum:'64646466465',
-        invoicenum:'6465465465',
-        buydate:'2015-4-22',
-        buycode:'46134656467464',
-        gkcompany:'上海快鸟',
-        drivelicense:{
-          type:'货运',
-          registdate:'2014-3-4',
-          indate:'2015-3-4',
-          imgurl:['证件正面照地址','反面照地址']
-        },
-        tradecard:{
-          tradecarnum:'524465',
-          registdate:'2015-1-1',
-          indate:'2016-1-1',
-          imgurl:['证件正面照地址','反面照地址']
-        }
-      },
-      carcredit:{
-        amount:'2000000',
-        allloan:'18期',
-        nowloan:{
-          count:'10期',
-          type:'还款记录',
-          appid:'56sa6d465d车主的appid'
-        },
-        annualrate:'6%',
-        starttime:'2015-4-22',
-        creditHZ:'月还',
-        credittype:'等额本息',
-        bandsman:{
-          name:'杨过',
-          appid:'担保人的appid'
-        },
-        pact:['合同正面照','合同反面照']
-     },
-     insurance:[
-        {year:'2015',data:'2016-4-20',oddnum:'456465465',company:'平安保险',types:['交强险','第三者责任险','车损险'],sum:'12000元'},
-        {year:'2014',data:'2016-4-20',oddnum:'456465465',company:'平安保险',types:['交强险','第三者责任险','车损险'],sum:'12000元'},
-        {year:'2013',data:'2016-4-20',oddnum:'456465465',company:'平安保险',types:['交强险','第三者责任险','车损险'],sum:'12000元'},
-     ],
-     accident:[
-      {year:'2017',pending:'1',accidentdate:'2017-1-14',claimsum:'2000元',actual:'0'},
-      {year:'2017',pending:'1',accidentdate:'2017-1-26',claimsum:'2000元',actual:'2000元'}
-      {year:'2015',pending:'0',accidentdate:'2015-2-14',claimsum:'2000元',actual:'2000元'}
-     ]
-    ]
+          }
+          .....
+        ],
+        path:[
+            {'time':'2016.10.1','coord':'上海市虹口区曲阳路336号'},
+            {'time':'2016.11.1','coord':'上海市虹口区曲阳路36号'},
+            {'time':'2016.12.1','coord':'上海市虹口区哈哈l路36号'},
+            {'time':'2017.12.2','coord':'上海市虹口区货车路336号'}
+        ]
+      ]
+  }
   }
 
 ```
@@ -1494,7 +1424,7 @@ php|api
 
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
-openid | string | 1 | 管理员的openid
+companyid | string | 1 | 公司的id
 
 ### 返回数据示例
 
@@ -1506,14 +1436,14 @@ openid | string | 1 | 管理员的openid
       {openid:'as75d7sa',realname:'王虎',nickname:'虎子',avatar:'头像地址',carnum:'沪D4545',registdate:'2015-12-12',indate:'2016-12-12',mode:'已逾期',wait:1},
       {openid:'as75d7sa',realname:'王志明',nickname:'老王',avatar:'头像地址',carnum:'沪D0545',registdate:'2016-2-28',indate:'2017-2-28',mode:'待缴费',wait:1},
       {openid:'as75d7sa',realname:'王志明',nickname:'老王',avatar:'头像地址',carnum:'沪D0545',,registdate:'2016-2-29'indate:'2017-3-1',mode:'已缴费',wait:0},
-      {openid:'as75d7sa',realname:'葫芦娃',nickname:'排队救爷爷',avatar:'头像地址',carnum:'沪D7845',reigistdate:'',indate:'',mode:'待投保',wait:0},
+      {openid:'as75d7sa',realname:'葫芦娃',nickname:'排队救爷爷',avatar:'头像地址',carnum:'沪D7845',reigistdate:'',indate:'',mode:'完成投保',wait:0},
       ....
     ]
   }
   
 ```
 
-### 续保信息详情
+### 管理员|操作员 为车辆续保
 
 ### 请求示例
 
@@ -1531,6 +1461,7 @@ php|api
 
 参数名称 | 参数类型 | 是否必选 | 备注
 ---|---|---|---
+company | string | 1 | 公司名称
 carnum | string | 1 | 车辆的车牌号
 
 #### 备注
