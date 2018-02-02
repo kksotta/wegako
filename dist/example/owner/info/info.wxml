@@ -1,0 +1,53 @@
+<!--example/owner/info/info.wxml-->
+<view class="page">
+    <view class="profile_nav">
+        <navigator url="info_pay" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="../../images/icon_nav_cw.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>缴费助手</view><view class="gray">您收到3条缴费通知</view>
+                </view>
+                <view class="weui-badge">8</view>
+            </view>
+        </navigator>
+        <navigator url="info_claims" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="../../images/icon_nav_cx.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>理赔小秘书</view><view class="gray">您收到2000元理赔</view>
+                </view>
+                <view class="weui-badge">8</view>
+            </view>
+        </navigator>
+        <navigator url="info_notice" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="../../images/icon_nav_gg.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>公告通知</view><view class="gray">营运证或会被取消 深圳经...</view>
+                </view>
+                <view class="weui-badge">8</view>
+            </view>
+        </navigator>
+    </view>
+    <view style="height:3.6em;"></view>
+    <view class="weui-footer_fixed-bottom">
+        <view class="weui-flex owner_nav_bg">
+            <navigator class="weui-flex__item col c f12" url="../owner">
+                <view><image src="../../images/icon_ower_off.png" class="owner_nav_img"></image></view>
+                <view>车主</view>
+            </navigator>
+            <navigator class="weui-flex__item col c f12" url="../trucks/trucks">
+                <view><image src="../../images/icon_truck_off.png" class="owner_nav_img"></image></view>
+                <view>车辆</view>
+            </navigator>
+            <view class="weui-flex__item col c f12">
+                <view><image src="../../images/icon_info_on.png" class="owner_nav_img"></image></view>
+                <view class="owner_nav_on">消息</view>
+            </view>
+            <navigator class="weui-flex__item col c f12" url="../mine/mine">
+                <view><image src="../../images/icon_mine_off.png" class="owner_nav_img"></image></view>
+                <view>我的</view>
+            </navigator>
+        </view>
+    </view>
+</view>

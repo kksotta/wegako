@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "example/index",
+
+    "example/info/info",
+    "example/notice/notice",
+    "example/notice/post",
+    "example/notice/detail",
+    "example/invite/invite",
+    "example/address/address",
+    "example/address/profile",
+
+    "example/button/button",
+    "example/list/list",
+    "example/input/input",
+    "example/slider/slider",
+    "example/uploader/uploader",
+
+    "example/article/article",
+    "example/badge/badge",
+    "example/flex/flex",
+    "example/footer/footer",
+    "example/gallery/gallery",
+    "example/grid/grid",
+    "example/icons/icons",
+    "example/loadmore/loadmore",
+    "example/panel/panel",
+    "example/preview/preview",
+    "example/progress/progress",
+
+    "example/actionsheet/actionsheet",
+    "example/dialog/dialog",
+    "example/msg/msg",
+    "example/msg/msg_success",
+    "example/msg/msg_fail",
+    "example/picker/picker",
+    "example/toast/toast",
+
+    "example/navbar/navbar",
+    "example/tabbar/tabbar",
+
+    "example/searchbar/searchbar"
+  ],
+  "window": {
+    "navigationBarTextStyle": "#ffffff",
+    "navigationBarTitleText": "微挂靠",
+    "navigationBarBackgroundColor": "#50cae4",
+    "backgroundColor": "#f1f1f1",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "backgroundColor": "#ffffff",
+    "color": "#999999",
+    "selectedColor": "#50cae4",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "example/index",
+      "iconPath": "example/images/icon_tabbar_gk_off.png",
+      "selectedIconPath": "example/images/icon_tabbar_gk_on.png",
+      "text": "挂靠"
+    }, {
+      "pagePath": "example/article/article",
+      "iconPath": "example/images/icon_tabbar_fx_off.png",
+      "selectedIconPath": "example/images/icon_tabbar_fx_on.png",
+      "text": "发现"
+    }, {
+      "pagePath": "example/list/list",
+      "iconPath": "example/images/icon_tabbar_sz_off.png",
+      "selectedIconPath": "example/images/icon_tabbar_sz_on.png",
+      "text": "设置"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

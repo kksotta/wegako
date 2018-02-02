@@ -1,0 +1,26 @@
+<!--example/finance/account.wxml-->
+<view class="page">
+    <view class="weui-post t12">
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <view class="weui-label">持卡人</view>
+            </view>
+            <view class="weui-cell__bd"><input placeholder="请输入持卡人姓名"/></view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <view class="weui-label">卡号</view>
+            </view>
+            <view class="weui-cell__bd"><input placeholder="请输入卡号"/></view>
+        </view>
+        <view class="weui-cell">
+            <picker class="p100 r15" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="weui-cell__ft_in-access">开户行</view>
+            </picker>
+        </view>
+    </view>
+    <view class="t12 f12 c gray">为了保证账户资金安全，只能绑定用户本人的银行卡</view>
+    <view class="weui-footer_fixed-bottom weui-footer">
+        <navigator url="" class="weui-cell_access">保存设置</navigator>
+    </view>
+</view>

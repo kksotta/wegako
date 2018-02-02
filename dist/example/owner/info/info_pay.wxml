@@ -1,0 +1,27 @@
+<view class="page">
+    <view class="page__bd_spacing">
+        <view class="weui-flex"><view class="info_date">2016.11.11 19:09</view></view>
+        <view class="weui-flex">
+            <view><image src="../../images/icon_nav_cw.png" class="info_dp"></image></view>
+            <navigator url="../pay/pay_detail" class="info_dia">您的车辆（沪G32850）挂靠管理即将到期，请于9月5日前缴纳车辆挂靠费，<text class="blue">点击缴费</text></navigator>
+        </view>
+
+        <view class="weui-flex"><view class="info_date">2016.11.11 19:09</view></view>
+        <view class="weui-flex">
+            <view><image src="../../images/icon_nav_cw.png" class="info_dp"></image></view>
+            <navigator url="../pay/pay_detail" class="info_dia">您的车辆（沪G32850）保险即将到期，请于9月5日前缴纳车辆保险费，<text class="blue">点击缴费</text></navigator>
+        </view>
+
+        <view class="weui-flex"><view class="info_date">2016.11.11 19:09</view></view>
+        <view class="weui-flex">
+            <view><image src="../../images/icon_nav_cw.png" class="info_dp"></image></view>
+            <navigator url="../pay/pay_detail" class="info_dia">您的车辆（沪G32850）已完成投保，<text class="blue">点击查看</text></navigator>
+        </view>
+
+        <view class="weui-flex"><view class="info_date">2016.11.11 19:09</view></view>
+        <view class="weui-flex">
+            <view><image src="../../images/icon_nav_cw.png" class="info_dp"></image></view>
+            <navigator url="../pay/pay_detail" class="info_dia">您的车辆（沪G32850）已完成行驶证审验，<text class="blue">点击查看</text></navigator>
+        </view>
+    </view>
+</view>

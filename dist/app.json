@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "example/index",
+    
+    "example/owner/owner",
+    "example/owner/pay/pay_detail",
+    "example/owner/pay/result",
+    "example/owner/pay/other_pay",
+    "example/owner/claims/claims",
+    "example/owner/claims/claims_list",
+    "example/owner/claims/claims_detail",
+    "example/owner/claims/claims_detail1",
+    "example/owner/claims/declare",
+    "example/owner/trucks/trucks",
+    "example/owner/trucks/archives",
+    "example/owner/trucks/paylist",
+    "example/owner/trucks/insurance",
+    "example/owner/info/info",
+    "example/owner/info/info_pay",
+    "example/owner/info/info_claims",
+    "example/owner/info/info_notice",
+    "example/owner/info/notice_detail",
+    "example/owner/mine/mine",
+    "example/owner/mine/company",
+    "example/owner/mine/address",
+    "example/owner/mine/finance",
+    "example/owner/mine/bill",
+    "example/owner/mine/bill_detail",
+    "example/owner/mine/withdraw",
+    "example/owner/mine/withdraw_result",
+    "example/owner/mine/withdrawlist",
+    "example/owner/mine/account",
+    "example/owner/mine/feedback"
+  ],
+  "window": {
+    "navigationBarTextStyle": "#ffffff",
+    "navigationBarTitleText": "微挂靠",
+    "navigationBarBackgroundColor": "#50cae4",
+    "backgroundColor": "#f1f1f1",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": "true"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

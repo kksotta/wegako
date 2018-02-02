@@ -1,0 +1,2 @@
+/* example/claims/claims.wxss */
+.blue_dot{color:#ffffff;text-align:center;line-height:14px;font-size:12px;}

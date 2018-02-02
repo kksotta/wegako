@@ -1,0 +1,111 @@
+<!--example/truck/truck.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <navigator class="weui-post b12" url="archives">
+            <view class="weui-flex">
+                <view style="padding:13px 0 0 12px;">
+                    <image src="../../images/pic_160.png" style="width:6em;height:6em"></image>
+                </view>
+                <view class="weui-flex__item">
+                    <view class="weui-cell" style="padding:5px 15px;">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">车牌号</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="gray">沪DD43890</view>
+                        </view>
+                    </view>
+                    <view class="weui-cell" style="padding:5px 15px;">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">状态</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="gray green">正常运营</view>
+                        </view>
+                    </view>
+                    <view class="weui-cell" style="padding:5px 15px;">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">挂靠公司</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="gray">上海发财运输公司</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="p100 f12 gray">
+                    <view class="weui-flex__item">· 2015年11月上牌</view>
+                    <view class="weui-flex__item">· 2015年11月年检到期</view>
+                </view> 
+                <view class="p100 f12 gray">
+                    <view class="weui-flex__item">· 2015年11月交强险到期</view>
+                    <view class="weui-flex__item">· 2015年11月商业险到期</view>
+                </view> 
+            </view>            
+        </navigator>
+        <navigator class="weui-post b12" url="archives">
+            <view class="weui-flex">
+                <view style="padding:13px 0 0 12px;">
+                    <image src="../../images/pic_160.png" style="width:6em;height:6em"></image>
+                </view>
+                <view class="weui-flex__item">
+                    <view class="weui-cell" style="padding:5px 15px;">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">车牌号</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="gray">沪DD43890</view>
+                        </view>
+                    </view>
+                    <view class="weui-cell" style="padding:5px 15px;">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">状态</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="red">已报废</view>
+                        </view>
+                    </view>
+                    <view class="weui-cell" style="padding:5px 15px;">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">挂靠公司</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="gray">上海发财运输公司</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="p100 f12 gray">
+                    <view class="weui-flex__item">· 2015年11月上牌</view>
+                    <view class="weui-flex__item">· 2015年11月年检到期</view>
+                </view> 
+                <view class="p100 f12 gray">
+                    <view class="weui-flex__item">· 2015年11月交强险到期</view>
+                    <view class="weui-flex__item">· 2015年11月商业险到期</view>
+                </view> 
+            </view>                
+        </navigator>
+    </view>
+    <view class="weui-footer_fixed-bottom">
+        <view class="weui-flex owner_nav_bg">
+            <navigator class="weui-flex__item col c f12" url="../owner">
+                <view><image src="../../images/icon_ower_off.png" class="owner_nav_img"></image></view>
+                <view>车主</view>
+            </navigator>
+            <view class="weui-flex__item col c f12">
+                <view><image src="../../images/icon_truck_on.png" class="owner_nav_img"></image></view>
+                <view class="owner_nav_on">车辆</view>
+            </view>
+            <navigator class="weui-flex__item col c f12" url="../info/info">
+                <view><image src="../../images/icon_info_off.png" class="owner_nav_img"></image></view>
+                <view>消息</view>
+            </navigator>
+            <navigator class="weui-flex__item col c f12" url="../mine/mine">
+                <view><image src="../../images/icon_mine_off.png" class="owner_nav_img"></image></view>
+                <view>我的</view>
+            </navigator>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,82 @@
+<!--example/trucks/insurance.wxml-->
+<view class="page__bd">
+        <view class="weui-post">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">车牌号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="gray">沪C46843</view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">车主</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="gray">黄蒙</view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">保单号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="gray">4634545888</view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">保险公司</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="gray">平安保险</view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">投保险种</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="gray">交强险、车损险、第三者、乘坐、盗抢</view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">投保日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="gray">2016-04-20</view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">保险有效期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="gray">2016-04-20</view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">保险金额</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="red">12000元</view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">保单照片</view>
+                </view>
+            </view>
+            <view class="weui-flex l15 b12">
+                <view class="weui-uploader__file">
+                    <image class="weui-uploader__img" src="../../images/pic_160.png" />
+                </view>
+                <view class="weui-uploader__file">
+                    <image class="weui-uploader__img" src="../../images/pic_160.png" />
+                </view>
+            </view>
+        </view>
+</view>

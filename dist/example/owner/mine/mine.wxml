@@ -1,0 +1,70 @@
+<!--example/set/set.wxml-->
+<view class="page">
+    <view class="profile_nav b12">
+        <view class="weui-cell weui-cell_access">
+            <view class="weui-flex" style="height:2.8em;">
+                <image src="../../images/icon_dp.png" class="info_dp"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>黄蓉（沪D78903）</view><view class="f12 gray">13888888888</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-post b12">
+        <navigator url="../trucks/trucks" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">我的车辆</view>
+        </navigator>
+    </view>
+    <view class="weui-post b12">
+        <navigator url="company" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">挂靠公司信息</view>
+        </navigator>
+        <navigator url="address" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <view class="weui-flex__item">材料邮寄地址</view>
+            </view>
+        </navigator>
+        <view class="weui-cell">
+            <view class="weui-flex__item">挂靠公司客服</view>
+            <view class="gray weui-nav-slide" style="padding-right:15px;">021-43673884</view>
+            <view class="l15"><image src="../../images/icon_phone_g.png" class="v_m" style="width:1em;height:1em;"></image></view>
+        </view>
+    </view>
+    <view class="weui-post b12">
+        <navigator url="finance" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <view class="weui-flex__item">我的余额</view>
+                <view class="red">2000</view>
+            </view>
+        </navigator>
+        <navigator url="bill" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">我的账单</view>
+        </navigator>
+    </view>
+    <view class="weui-post">
+        <navigator url="feedback" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">意见反馈</view>
+        </navigator>
+    </view>
+    <view style="height:3.6em;"></view>
+    <view class="weui-footer_fixed-bottom">
+        <view class="weui-flex owner_nav_bg">
+            <navigator class="weui-flex__item col c f12" url="../owner">
+                <view><image src="../../images/icon_ower_off.png" class="owner_nav_img"></image></view>
+                <view>车主</view>
+            </navigator>
+            <navigator class="weui-flex__item col c f12" url="../trucks/trucks">
+                <view><image src="../../images/icon_truck_off.png" class="owner_nav_img"></image></view>
+                <view>车辆</view>
+            </navigator>
+            <navigator class="weui-flex__item col c f12" url="../info/info">
+                <view><image src="../../images/icon_info_off.png" class="owner_nav_img"></image></view>
+                <view>消息</view>
+            </navigator>
+            <view class="weui-flex__item col c f12">
+                <view><image src="../../images/icon_mine_on.png" class="owner_nav_img"></image></view>
+                <view class="owner_nav_on">我的</view>
+            </view>
+        </view>
+    </view>
+</view>

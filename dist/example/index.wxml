@@ -1,0 +1,99 @@
+<view class="page">
+    <view class="fix_top">
+        <navigator url="owner/pay/pay_detail" class="weui-toptips l"><icon type="info" size="16" style="margin-top:3px;"></icon> 您的车辆应于9月5日前缴纳车辆挂靠费，<text class="blue">点击缴费</text></navigator>
+    </view>
+    <view class="profile_nav" style="margin-top:2.4em;">
+        <navigator url="owner/claims/claims" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="images/icon_nav_cx.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>出险申报</view><view class="gray">出险理赔申报</view>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="owner/pay/pay_detail" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="images/icon_nav_gk.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>挂靠管理费</view><view class="f12 red">2016-12-30到期</view>
+                </view>
+                <view class="f12 red">3200元</view>
+            </view>
+        </navigator>
+        <navigator url="owner/pay/pay_detail" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="images/icon_nav_bx.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>车辆保险费</view><view class="f12 red">2016-12-30到期</view>
+                </view>
+                <view class="f12 red">3200元</view>
+            </view>
+        </navigator>
+        <navigator url="owner/mine/bill" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="images/icon_nav_cd.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>车辆贷款</view><view class="f12 gray">2016-12-30到期</view>
+                </view>
+                <view class="f12 gray">暂无欠款</view>
+            </view>
+        </navigator>
+        <navigator url="owner/mine/bill" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="images/icon_nav_xs.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>行驶证代办费</view><view class="f12 gray">2016-12-30到期</view>
+                </view>
+                <view class="f12 gray">暂无欠款</view>
+            </view>
+        </navigator>
+        <navigator url="owner/mine/bill" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="images/icon_nav_yy.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>营运证代办费</view><view class="f12 gray">2016-12-30到期</view>
+                </view>
+                <view class="f12 gray">暂无欠款</view>
+            </view>
+        </navigator>
+        <navigator url="owner/mine/bill" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="images/icon_nav_ew.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>二维代办费</view><view class="f12 gray">2016-12-30到期</view>
+                </view>
+                <view class="f12 gray">暂无欠款</view>
+            </view>
+        </navigator>
+        <navigator url="owner/mine/bill" class="weui-cell">
+            <view class="weui-flex weui-cell__ft_in-access">
+                <image class="kind-list__img" src="images/icon_nav_gps.png"></image>
+                <view class="weui-flex__item" style="flex-direction:column;">
+                    <view>GPS管理费</view><view class="f12 gray">2016-12-30到期</view>
+                </view>
+                <view class="f12 gray">暂无欠款</view>
+            </view>
+        </navigator>
+    </view>
+    <view style="height:3.6em;"></view>
+    <view class="weui-footer_fixed-bottom">
+        <view class="weui-flex owner_nav_bg">
+            <view class="weui-flex__item col c f12">
+                <view><image src="images/icon_ower_on.png" class="owner_nav_img"></image></view>
+                <view class="owner_nav_on">车主</view>
+            </view>
+            <navigator class="weui-flex__item col c f12" url="owner/trucks/trucks">
+                <view><image src="images/icon_truck_off.png" class="owner_nav_img"></image></view>
+                <view>车辆</view>
+            </navigator>
+            <navigator class="weui-flex__item col c f12" url="owner/info/info">
+                <view><image src="images/icon_info_off.png" class="owner_nav_img"></image></view>
+                <view>消息</view>
+            </navigator>
+            <navigator class="weui-flex__item col c f12" url="owner/mine/mine">
+                <view><image src="images/icon_mine_off.png" class="owner_nav_img"></image></view>
+                <view>我的</view>
+            </navigator>
+        </view>
+    </view>
+</view>

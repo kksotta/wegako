@@ -1,0 +1,12 @@
+<view style="display:block;padding:1px;">
+    <canvas canvas-id="WColumnChart1" class="WColumnChart1" style="">
+    </canvas>
+</view>      
+<view style="display:block;padding:1px;">
+    <canvas canvas-id="WLineChart1" class="WLineChart1" style="">
+    </canvas>
+</view>  
+<view style="display:block;padding:1px;">
+    <canvas canvas-id="WPieChart1" class="WPieChart1" style="">
+    </canvas>
+</view>  

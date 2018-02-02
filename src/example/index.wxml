@@ -1,0 +1,19 @@
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+                <view class="kind-list__item">
+                    <navigator url="{{item.link}}/{{item.link}}" class="weui-cell weui-cell_access">
+                        <view class="weui-flex kind-list__item-hd">
+                            <image class="kind-list__img" src="images/icon_nav_{{item.id}}.png"></image>
+                            <view class="weui-flex__item" style="flex-direction:column;">
+                                <view>{{item.title}}</view><view class="page__desc">{{item.desc}}</view>
+                            </view>
+                            <view class="weui-badge">8</view>               
+                        </view>
+                    </navigator>
+                </view>
+            </block>
+        </view>
+    </view>    
+</view>

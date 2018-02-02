@@ -1,0 +1,15 @@
+.WColumnChart1{
+ width:300px;  
+ height:200px;  
+ 
+}
+.WLineChart1{
+ width:300px;  
+ height:200px;  
+ 
+}
+.WPieChart1{
+ width:300px;  
+ height:200px;  
+ 
+}

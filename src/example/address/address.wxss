@@ -1,0 +1,17 @@
+/* example/address/address.wxss */
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.address_nav{
+    position: fixed;
+    font-size:12px;
+    line-height:14px;
+    width:16px;
+    right:8px;
+    top:10%;
+    text-align:center;
+}

@@ -1,0 +1,21 @@
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex"><view class="info_date">今天 19:09</view></view>
+        <view class="weui-flex">
+            <view><image src="../images/icon_dp.png" class="info_dp"></image></view>
+            <view class="info_dia">黄蓉（13888888888）成功加入团队。请在电脑登录卡车之家微挂靠官方网站（gk.360che.com）完善相关挂靠信息。</view>
+        </view>
+
+        <view class="weui-flex"><view class="info_date">2016.11.11 19:09</view></view>
+        <view class="weui-flex">
+            <view><image src="../images/icon_dp.png" class="info_dp"></image></view>
+            <view class="info_dia">黄蓉（13888888888）成功加入团队。请在电脑登录卡车之家微挂靠官方网站（gk.360che.com）完善相关挂靠信息。</view>
+        </view>
+
+        <view class="weui-flex"><view class="info_date">2016.11.11 19:09</view></view>
+        <view class="weui-flex">
+            <view><image src="../images/icon_dp.png" class="info_dp"></image></view>
+            <view class="info_dia">黄蓉（13888888888）成功加入团队。请在电脑登录卡车之家微挂靠官方网站（gk.360che.com）完善相关挂靠信息。</view>
+        </view>
+    </view>
+</view>

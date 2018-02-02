@@ -1,0 +1,59 @@
+<!--example/owner/declare.wxml-->
+<view class="page">
+  <view class="weui-toptips f12 l">
+    请将相关材料（定损单、责任认定书、维修发票、维修清单等）寄至公司：上海市闸北区天目西路788号（杨小姐 13888888888）
+  </view>
+  <view class="profile_nav">
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">车主</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input placeholder="黄容" />
+      </view>
+    </view>
+    <navigator class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">车牌号</view>
+      </view>
+      <view class="weui-cell__bd weui-cell__ft_in-access">
+      </view>
+    </navigator>
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">事故日期</view>
+      </view>
+      <view class="weui-cell__bd weui-cell__ft_in-access">
+        <view class="gray">2016-12-20</view>
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">报陪金额</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input placeholder="" />
+      </view>
+      <view class="gray">元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">驾驶员</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input placeholder="" />
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">事故地点</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input placeholder="" />
+      </view>
+    </view>
+  </view>
+  <view class="weui-footer_fixed-bottom weui-footer">
+    <navigator url="addcomp" class="weui-cell_access">提交</navigator>
+  </view>
+</view>

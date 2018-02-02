@@ -1,0 +1,44 @@
+<!--example/owner/mine/company.wxml-->
+<view class="page">
+        <view class="weui-post t12">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">公司名称</view>
+                </view>
+                <view class="weui-cell__bd gray">重庆耀发</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">公司座机</view>
+                </view>
+                <view class="weui-cell__bd weui-flex" bindtap="calling">
+                    <view class="weui-flex__item gray weui-nav-slide">0570-65728943</view>
+                    <view class="l15"><image src="../../images/icon_phone_g.png" class="v_m" style="width:1em;height:1em;"></image></view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">公司所在地</view>
+                </view>
+                <view class="weui-cell__bd gray">重庆市沙拉酱模雷克萨的电动车</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">客服电话</view>
+                </view>
+                <view class="weui-cell__bd weui-flex" bindtap="calling">
+                    <view class="weui-flex__item gray weui-nav-slide">0570-65728943</view>
+                    <view class="l15"><image src="../../images/icon_phone_g.png" class="v_m" style="width:1em;height:1em;"></image></view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">理赔申报电话</view>
+                </view>
+                <view class="weui-cell__bd weui-flex" bindtap="calling">
+                    <view class="weui-flex__item gray weui-nav-slide">0570-65728943</view>
+                    <view class="l15"><image src="../../images/icon_phone_g.png" class="v_m" style="width:1em;height:1em;"></image></view>
+                </view>
+            </view>
+        </view>
+</view>

@@ -1,0 +1,4 @@
+/* example/truck/archives.wxss */
+.state_g{position: relative;width:5em;font-size:12px;line-height: 16px;height:16px;background: #48c23d;border-radius: 18px;text-align:center;margin-top:6px;}
+.state_r{position: relative;width:4em;font-size:12px;line-height: 16px;height:16px;background: #E64340;border-radius: 18px;text-align:center;margin-top:6px;}
+.archives_plate{margin-bottom:6px;}

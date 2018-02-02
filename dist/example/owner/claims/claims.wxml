@@ -1,0 +1,45 @@
+<!--example/claims/claims.wxml-->
+<view class="page">
+  <view class="page__bd page__bd_spacing">
+            <view class="insurance_cell">
+                <view class="weui-flex b12" style="margin-left:-25px;">
+                    <view class="blue_dot dot-shw">1</view>
+                    <view class="weui-flex__item l15">110报案</view>
+                </view>
+                <view class="weui-flex b12" style="margin-left:-25px;">
+                    <view class="blue_dot dot-shw">2</view>
+                    <view class="weui-flex__item l15">保险公司报案</view>
+                </view>
+                <view class="kind-list__item" style="padding:12px 15px;">
+                    <view class="weui-flex">
+                        <view class="weui-flex__item col weui-nav-slide">
+                            <view>投保公司：平安保险公司</view>
+                            <view>报险电话：4008888888</view>
+                        </view>
+                    <view class="l15"><image src="../../images/icon_phone_g.png" style="width:1em;height:1em;padding-top:12px;"></image></view>
+                    </view>    
+                </view>
+                <view class="weui-flex b12" style="margin-left:-25px;">
+                    <view class="blue_dot dot-shw">3</view>
+                    <view class="weui-flex__item l15">定损维修</view>
+                </view>
+                <view class="weui-flex b12" style="margin-left:-25px;">
+                    <view class="blue_dot dot-shw">4</view>
+                    <view class="weui-flex__item l15">挂靠公司理陪申报</view>
+                </view>
+                <view class="kind-list__item" style="padding:12px 15px;">
+                    <view class="weui-flex">1、将材料（定损单、责任认定书、维修发票、维修清单等）寄至公司：上海市闸北区天目西路788号，杨小姐，13888888888</view>
+                    <view class="weui-flex">2、点击下方“理赔申报”申请保险理算赔付</view>
+                    <view class="weui-flex t12">
+                    <button class="weui-btn btn_def blue p100" type="default"><image src="../../images/icon_phone_g.png" style="width:1em;height:1em;vertical-align: middle;margin-right:8px;"></image>理赔咨询</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    <view class="endmenu">
+        <navigator url="claims_list" class="l15" style="background:#ffffff;"><image src="../../images/icon_list.png" style="width:2em;height:2em;" class="v_m"></image></navigator>
+        <navigator url="declare" class="weui-flex__item">
+            <button class="btn_blue" hover-class="btn_blue-hover">理赔申报</button>
+        </navigator>
+    </view>
+</view>
